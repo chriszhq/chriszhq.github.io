@@ -1,9 +1,9 @@
-<div class="form">
+<div class="form" [ngClass]="{'invalid':invalid}">
 <select [disabled]="disabled" (click)="onSelectClick($event.target, selectInput)">
   <option *ngFor="let op of allOps" [value]="op">{{op}}</option>
 </select>
 <div name="cover"> <!-- cover the triangle displayed in chrome -->
-<input #selectInput [attr.list]="dataListId" onclick="this.value=''" 
+<input #selectInput [attr.list]="dataListId" (click)="onClickInput(selectInput)" 
   (input)="inputChange($event.target.value)" [disabled]="disabled" [placeholder]="placeholder || ''"/>
 </div> 
 <datalist [id]="dataListId">
