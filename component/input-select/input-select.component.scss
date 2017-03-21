@@ -1,0 +1,48 @@
+$cover-width: 1.3em;
+div.form {
+  position: relative;
+  min-width: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+div[name="cover"] {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: -$cover-width;
+  z-index: 2;
+  border: 0px;
+  overflow: hidden;
+  width: 100%;
+}
+
+select {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  display: block;
+  position: relative;
+  padding:0px;
+  top: 0px;
+  left: $cover-width;
+  border-left-width: 1px;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  
+
+  height: 100%;
+  width: 100%;
+  font-size: inherit;
+}
+
+
+
+
+
+
