@@ -67,6 +67,11 @@ export class InputSelectComponent implements OnInit  {
    */
   onSelectClick(sel: HTMLSelectElement, input: HTMLInputElement) {
     let i = sel.selectedIndex;
+    if ((typeof i) !== 'number') {
+      // unselected state: do nothing
+      return;
+    }
+    
     if (i === -1) {
       this.invalid = true;
     } else {
