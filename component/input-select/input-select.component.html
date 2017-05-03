@@ -1,12 +1,14 @@
 <div class="form" [ngClass]="{'invalid':invalid}">
+<div name="select-container">
 <!-- firefox seems fire only change event when click on a different option, so it's necessary to bind both click and change event -->
-<select [disabled]="disabled" (click)="onSelectClick($event.target, selectInput)" 
+<select [disabled]="elemDisable" (click)="onSelectClick($event.target, selectInput)" 
   (change)="onSelectClick($event.target, selectInput)"> 
   <option *ngFor="let op of allOps" [value]="op">{{op}}</option>
 </select>
-<div name="cover"> <!-- cover the triangle displayed in chrome -->
+</div>
+<div name="input-container"> <!-- overflow the right part of input to hide the triangle displayed in chrome -->
 <input #selectInput [attr.list]="dataListId" (click)="onClickInput(selectInput)" 
-  (input)="inputChange($event.target.value)" [disabled]="disabled" [placeholder]="placeholder || ''"/>
+  (input)="inputChange($event.target.value)" [disabled]="elemDisable" [placeholder]="placeholder || ''"/>
 </div> 
 <datalist [id]="dataListId">
   <option *ngFor="let op of allOps" [value]="op">{{op}}</option>
